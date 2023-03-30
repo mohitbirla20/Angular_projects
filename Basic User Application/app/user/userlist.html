@@ -1,0 +1,36 @@
+<div>
+
+    <style>
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+    <table>  
+        <tr>
+          <th>UserId</th> 
+          <th>Contact Number</th>
+          <th>UserName</th>
+          <th>Age</th>
+        </tr>
+        <tr *ngFor="let data of list; index as i;">
+          <td>{{data.userid}}</td>
+          <td>{{data.contactNumber}}</td>
+          <td>{{data.address}}</td>
+          <td>{{data.age}}</td>
+          <button (click)='deleteUser(data.userid)'>DELETE</button>
+          <button (click) = 'updateUserDetails(data.userid)'>EDIT</button>
+        </tr>
+      </table>
+</div>

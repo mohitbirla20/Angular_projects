@@ -1,0 +1,80 @@
+<div>
+  <style>
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 15px;
+      /* margin: 5px 0 22px 0; */
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    .registerbtn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+    }
+
+    a {
+      color: dodgerblue;
+    }
+
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+    }
+
+    
+  </style>
+  <form id="registration">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+ 
+      <label for="email"><b>Email</b></label>
+      <input class="sphinxform" type="text" placeholder="Enter Email" [(ngModel)]="user.email" name="email" id="email" spx-validation="[REQUIRED, EMAIL]" spx-message="['Email required','Please enter valid email']">
+
+      <label for="psw"><b>Password</b></label>
+      <input class="sphinxform"  type="password" placeholder="Enter Password" [(ngModel)]="user.password" spx-validation="[REQUIRED, PASSWORD]" spx-message="['Password required','Please enter valid password']" name="psw" id="psw">
+
+      <label for="Age"><b>Age</b></label>
+      <input  class="sphinxform" type="text" placeholder="Enter Age" [(ngModel)]="user.age" spx-validation="[REQUIRED]" spx-message="['Age required']" name="age" id="age">
+
+      <label for="address"><b>Address</b></label>
+      <input  class="sphinxform" type="text" placeholder="Enter Address" [(ngModel)]="user.address"  spx-validation="[REQUIRED]" spx-message="['Address required']" name="address" id="address">
+
+      
+      <label for="username"><b>UserNAme</b></label>
+      <input  class="sphinxform" type="text" placeholder="Enter userName" [(ngModel)]="user.userName"  spx-validation="[REQUIRED]" spx-message="['Address required']" name="address" id="address">
+
+      <label for="contactNumber"><b>Contact Number</b></label>
+      <input class="sphinxform"  type="text" placeholder="Enter Contact Number" [(ngModel)]="user.contactNumber" name="contactNumber" spx-validation="[REQUIRED]" spx-message="['contactNumber required']" id="contactNumber">
+      <hr>
+
+      <button type="button" (click)="validateDetails()" class="registerbtn">Register</button>
+    </div>
+
+  </form>
+</div>
